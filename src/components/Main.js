@@ -5,16 +5,29 @@ let imageDatas =  require('../data/imageDatas.json');
 
 import React from 'react';
 
-let yeomanImage = require('../images/yeoman.png');
+let yeomanImage = require('../images/1.jpg');
+
+let getImageURL = (imageDataArr) =>{
+  console.log(1233)
+  for(var i = 0, j = imageDataArr.length; i < j; i++){
+    let ima = imageDataArr[i];
+    ima.imageUrl = require('../images/' + ima.fileName);
+  }
+  return imageDataArr;
+}
+
+imageDatas = getImageURL(imageDatas);
+console.log(111, imageDatas);
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
-        <span>111111</span>
-      </div>
+      <section className="stage">
+        <section className='img-sec'>
+        </section>
+        <nav className='controller-nav'>
+        </nav>
+      </section>
     );
   }
 }
