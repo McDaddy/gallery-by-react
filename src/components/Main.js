@@ -1,6 +1,8 @@
 require('normalize.css/normalize.css');
 require('styles/App.css');
 
+let imageDatas =  require('../data/imageDatas.json');
+
 import React from 'react';
 
 let yeomanImage = require('../images/yeoman.png');
